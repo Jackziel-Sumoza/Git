@@ -38,7 +38,7 @@ ELIMINAR UNA CARPETA O ARCHIVOS
 
 CAMBIAR EL NOMBRE DE UN ARCHIVO
 
-`$ git   mv archivo_a_renombrar archivo_renombrado`
+`$ git mv archivo_a_renombrar archivo_renombrado`
 
 Limpiar la consola con (clear o cls).
 
@@ -62,27 +62,27 @@ CUANDO CONFIGURAMOS LO QUE TENDREMOS EN GIT NECESITAMOS ENTENDER ESTO PARA DAR L
 
 NOMBRE DE USUARIO
 
--   `$ git   config --system user.name "Nombre"`
--   `$ git   config --global user.name "Nombre"`
--   `$ git   config --local user.name "Nombre"`
+-   `$ git config --system user.name "Nombre"`
+-   `$ git config --global user.name "Nombre"`
+-   `$ git config --local user.name "Nombre"`
 
 CORREO DE USUARIO
 
--   `$ git   config --system user.email "xxxxxx@gmail.com"`
--   `$ git   config --global user.email "xxxxxx@gmail.com"`
--   `$ git   config --local user.email "xxxxxx@gmail.com"`
+-   `$ git config --system user.email "xxxxxx@gmail.com"`
+-   `$ git config --global user.email "xxxxxx@gmail.com"`
+-   `$ git config --local user.email "xxxxxx@gmail.com"`
 
 TODAS LAS CONFIGURACIONES QUE YA TENEMOS EN GIT DEFINIDAS
 
-`$ git   config --list`
+`$ git config --list`
 
 COLOREAR LA INTERFACE
 
-`$ git   config --global color.ui true`
+`$ git config --global color.ui true`
 
 ### Configurar el editor de codigo
 
-`$ git   config --global core.editor "code --wait"`
+`$ git config --global core.editor "code --wait"`
 
 Lo que significa --wait, es para que cuando modifiquemos algo en visual studio code, se envie y confirme al cerrar visual studio code
 
@@ -118,79 +118,79 @@ PARA VER LOS ARCHIVOS OCULTOS
 
 PARA CARGAR LOS ARCHIVOS QUE DESEEMOS AL SER MODIFICADOS
 
-`$ git   add nombre_del_archivo`
+`$ git add nombre_del_archivo`
 
 Si en vez de nombre colocamos (.) se suben todos los archivos. Con add lo pasamos al area de preparación y no mas area de trabajo
 
 VER INFORMACION SOBRE NUESTRA AREA DE TRABAJO Y SOBRE LOS ARCHIVOS DEL REPOSITORIO ETC
 
-`$ git   status`
+`$ git status`
 
 PARA REMOVER LOS ARCHIVOS DEL AREA DE STAGE
 
-`$ git   rm --cached nombre_de_archivo`
+`$ git rm --cached nombre_de_archivo`
 
 HACER UN COMMIT ES ENVIAR DE STAGE A COMMIT
 
-`$ git   commit -m "mensaje que enviamos en el comentario"`
+`$ git commit -m "mensaje que enviamos en el comentario"`
 
-`$ git   commit "con el comentario escrito desde el editor de codigo"`
+`$ git commit "con el comentario escrito desde el editor de codigo"`
 
-`$ git   commit -m "enviar directamente desde area de trabajo al commit" -a`
+`$ git commit -m "enviar directamente desde area de trabajo al commit" -a`
 
 SI QUEREMOS RECUPERAR UN ARCHIVO BORRADO
 
-`$ git   restore nombre_de_archivo`
+`$ git restore nombre_de_archivo`
 
 SI QUEREMOS DEVOLVER TODO A COMO ESTA EN EL STAGE Y NO LO SUBIMOS AL AREA DE STAGE (pierde los cambios)
 
-`$ git   checkout nombre_de_archivo`
+`$ git checkout nombre_de_archivo`
 
 CUANDO QUEREMOS DEVOLVER TODO DESDE EL REPOSITORIO Y CAMBIAR EL STAGE Y EL LOCAL (pierde los cambios)
 
-`$ git   reset --hard`
+`$ git reset --hard`
 
 MOSTRAR LOS CAMBIOS SIN MUCHA HABLADERA DE PAJA
 
-`$ git   status -s`
+`$ git status -s`
 
 PARA VER EL HISTORIAL DE CAMBIOS DE UN ARCHIVO
 
-`$ git   show nombre_de_archivo`
+`$ git show nombre_de_archivo`
 
 Busca directamente el commit y pinta los cambios directamente del archivo.
 
 PARA VER LA DIFERENCIA ENTRE NUESTRO ARCHIVO ACTUAL Y EL QUE ESTA EN COMMIT
 
-`$ git   diff --staged`
+`$ git diff --staged`
 
 Muestra primero todo el archivo anterior y luego el actual.
 
 PARA VER LOS COMMIT QUE HAY Y SUS DATOS
 
-`$ git   log`
+`$ git log`
 
-`$ git   log --oneline`
+`$ git log --oneline`
 
 Muestra un resumen del identificador del commit sin datos de usuarios etc. Hay posibilidades que al resumir la forma en la que se identifica el commit se repita cuando hay miles de commits, para ello se debe cambiar el resumidor a 10 caracteres.
 
-`$ git   config --global core.abbrev "cantidad de caracteres"`
+`$ git config --global core.abbrev "cantidad de caracteres"`
 
 PARA VER LAS DIFERENCIAS PUNTUALES ENTRE LOS GOMMIT
 
-`$ git   diff "codigo de commit" "codigo de commit"`
+`$ git diff "codigo de commit" "codigo de commit"`
 
 PARA VER SOLO EL NOMBRE DE LOS ARCHIVOS CAMBIADOS
 
-`$ git   diff --name-only "codigo de commit" "codigo de commit"`
+`$ git diff --name-only "codigo de commit" "codigo de commit"`
 
 PARA VER LAS LINEAS DE LOS ARCHIVOS QUE CAMBIARON
 
-`$ git   diff --word-diff "codigo de commit" "codigo de commit"`
+`$ git diff --word-diff "codigo de commit" "codigo de commit"`
 
 PARA MODIFICAR UN COMMIT
 
-`$ git   commit --amend`
+`$ git commit --amend`
 
 Modificar el comentario dentro del commit
 
@@ -202,23 +202,23 @@ Si lo que queremos es modificar un commit anterior, lo que sucedera es que se el
 
 SI AUN ASI QUIRES MODIFICAR UN COMMIT ANTERIOR
 
-`$ git   rebase -i head~numero_de_indices_a_retroceder`
+`$ git rebase -i head~numero_de_indices_a_retroceder`
 
 LUEGO PARA DEVOLVER LOS COMMIT QUE CARGAMOS
 
-`$ git   rebase --continue`
+`$ git rebase --continue`
 
 FORMAS DE DESACER COMMITS
 
-`$ git   reset --soft codigo_de_commit o head~numeros_a_volver`
+`$ git reset --soft codigo_de_commit o head~numeros_a_volver`
 
 Forma de borrado suave, agarra los archivos del borrado y lo envia al area de staging.
 
-`$ git   reset --mixex codigo_de_commit o head~numeros_a_volver`
+`$ git reset --mixex codigo_de_commit o head~numeros_a_volver`
 
 Forma de borrado media, lo que sucede es que eliminamos y no agrega ni elimina nada del area de staging.
 
-`$ git   reset --hard codigo_de_commit o head~numeros_a_volver`
+`$ git reset --hard codigo_de_commit o head~numeros_a_volver`
 
 Forma de borrado fuerte, elimina y sobreescribe todo, desde area de trabajo, staging y commit.
 
@@ -230,49 +230,49 @@ Forma de borrado fuerte, elimina y sobreescribe todo, desde area de trabajo, sta
 
 PARA MOSTRAR LOS BRANCH
 
-`$ git   branch`
+`$ git branch`
 
 PARA CREAR UN NUEVO BRANCH
 
-`$ git   branch nombre-de-la-rama`
+`$ git branch nombre-de-la-rama`
 
 La forma de nombrar las ramas es quebap-case
 
 MOVER ENTRE RAMAS
 
-`$ git   checkout rama-a-la-que-nos-moveremos`
+`$ git checkout rama-a-la-que-nos-moveremos`
 
-`$ git   swith rama-a-la-que-nos-moveremos`
+`$ git swith rama-a-la-que-nos-moveremos`
 
 Utilizar esta, es nueva pero esta optimizada.
 
 FORMA DE CREAR Y MOVER A ELLA
 
-`$ git   checkout -b rama-nueva`
+`$ git checkout -b rama-nueva`
 
 Creamos una rama con -b y nos movemos a ella inmediatamente.
 
-`$ git   switch -c rama-nueva`
+`$ git switch -c rama-nueva`
 
 Creamos una rama con -c y nos movemos a ella inmediatamente.
 
 BORRAR LAS RAMAS
 
-`$ git   branch -d rama-que-queremos-borrar`
+`$ git branch -d rama-que-queremos-borrar`
 
 Tenemos que estar en otra rama para borrarla.
 
 MODIFICAR RAMAS (si no estoy en la rama)
 
-`$ git   branch -m nombre-de-rama nombre-de-la-rama-modificada`
+`$ git branch -m nombre-de-rama nombre-de-la-rama-modificada`
 
-`$ git   branch -m nuevo-nombre-de-rama-actual`
+`$ git branch -m nuevo-nombre-de-rama-actual`
 
 Si estoy en la rama.
 
 HACER UN MERGE
 
-`$ git   merge nombre-de-la-rama`
+`$ git merge nombre-de-la-rama`
 
 Tengo que estar en la rama que voy a la que voy a unir; las ramas seguiran existiendo, solo que se une a la otra.
 
@@ -282,41 +282,44 @@ Es ese conflicto que se da cuando al trabajar sobre otra rama, la rama mastes se
 
 MOSTRAR LOS COMMITS DE TODAS LAS RAMAS
 
-`$ git   log --oneline --all`
+`$ git log --oneline --all`
 
 SI NO PUSIMOS CONTINUAR AL RESOLVER EL CONFLICTO
 
-`$ git   merge --continue`
+`$ git merge --continue`
 
 ACCEDER A LOS ARCHIVOS
 
-`$ git   lsr-tee -r --name-only codigo_de_commit`
+`$ git lsr-tee -r --name-only codigo_de_commit`
 
 Lo que hacemos con este es acceder a los archivos que posee un commit.
 
 MOSTRAR TODOS LOS COMMITS Y ADEMAS GRAFICARLOS POR LAS RAMAS
 
-`$ git   log --oneline --all --graph`
+`$ git log --oneline --all --graph`
 
 ### ALIAS
 
 Los alias no llevan git
 
-`$ git   config --global alias.nombre-del-alias "todo el codigo que queremos resumir en alias"`
+`$ git config --global alias.nombre-del-alias "todo el codigo que queremos resumir en alias"`
 
 PARA RECUPERAR UN COMMIT BORRADO
 
 -   Se necesita tener el codigo_commit
 
-`$ git   reset --hard codigo_commit`
+`$ git reset --hard codigo_commit`
 
 RECUPERAR TODAS LAS REFERENCIAS DEL HEAD Y SUS MOVIMIENTO
 
-`$ git   reflog`
+`$ git reflog`
 
 ---
 
 ## GIT Y GITHUB
+
+GUARDAR EL ENLACE DEL REPOSITORIO REMOTO
+`git remote add origin https://remote-repo-url`
 
 CLONAR UN REPOSITORIO EN LA NUBE
 
@@ -324,45 +327,45 @@ En github se visualiza como fork, que es crear un clon del repositorio.
 
 Origin hace referencia al repositorio en la nube
 
-`$ git   clone https://estedebeserelenlacecopiadodelrepositorio.com`
+`$ git clone https://estedebeserelenlacecopiadodelrepositorio.com`
 
 SUBIR EL REPOSITORIO A LA NUBE
 
-`$ git   push origin(donde) master(rama)`
+`$ git push origin(donde) master(rama)`
 
 El clon mantiene la referencia al repositorio remoto.
 
 ACTUALIZAR EL CODIGO, TRAER EL CODIGO DEL REMOTO A MI REPOSITORIO LOCAL SE ACTUALIZA Y LE VALE MADRE LO QUE TENGAS, NO USAR SIN PENSAR
 
-`$ git   pull`
+`$ git pull`
 
 ACTUALIZAR EL CODIGO, TRAER EL CODIGO DEL REMOTO Y EVALUAR COMO LO VAS A UTILIZAR (GIT PULL HACE GIT FETCH Y LUEGO GIT MERGE)
 
-`$ git  fetch`
+`$ git fetch`
 
 CREAR UN ARCHIVO
 
-`$touch archivo.txt`
+`$ touch archivo.txt`
 
 SABER SI ESTOY CONECTADO A UN SERVIDOR REMOTO Y QUE PUEDO HACER
 
-`$ git  remote -v`
+`$ git remote -v`
 
 AGREGAR UN REPOSITORIO A LA NUBE
 
-`$ git  remote add origin(puede ser cualquier nombre) https://........`
+`$ git remote add origin(puede ser cualquier nombre) https://........`
 
 CREAR UNA RAMA REMOTA DIRECTAMENTE DEL Local
 
-`$ git   branch -M main`
+`$ git branch -M main`
 
 HACER UN PUSH A LA NUBE DIRECTAMENTE DEL LOCAL
 
-`$ git   push origin main`
+`$ git push origin main`
 
 si queremos configurar el push con todo eso por defecto agregar -u
 
-`$ git   push -u origin main`
+`$ git push -u origin main`
 
 ---
 
@@ -389,9 +392,9 @@ si queremos configurar el push con todo eso por defecto agregar -u
 -   Commits innecesarios y no relacionables no se hacen
     piensa lo siguiente, que haces mucho en un proyecto, haces cambios importante y al finalizar todo el proyecto es que haces el commit, lo que sucede es que si una parte de ese proyecto la quieres mover y usarla en otros lugares tendras que moverla completa y eso no es lo que quieres directamente.
 
-    -   ahora si haces muchos pequeños commits innecesarios, para hacer algo simple tendras que trasladar muchos commits para poder hacer algo simple como aplicar una funcionalidad a otra rama entonces se debe hayar un equilibro ahi.
+-   ahora si haces muchos pequeños commits innecesarios, para hacer algo simple tendras que trasladar muchos commits para poder hacer algo simple como aplicar una funcionalidad a otra rama entonces se debe hayar un equilibro ahi.
 
-    -   ejemplo: cambio importante y significativo pequeño.
+-   ejemplo: cambio importante y significativo pequeño.
 
 ### Ejemplo Pagina Web:
 
@@ -402,41 +405,41 @@ si queremos configurar el push con todo eso por defecto agregar -u
             -   stage cambios-del-boton
                 -   commit "creación del diseño del boton hamburguesa"
                 -   commit "funcionalidad del boton hamburguesa"
-                -   commit "Solución de problemas del boton hamburguesa inicial y cambios de colores en el diseño"
+                 -   commit "Solución de problemas del boton hamburguesa inicial y cambios de colores en el diseño"
 
 ### git stash, git stash apply git stash pop
 
 Si tenemos cambios que necesitamos guardar para cambiarnos a una rama que necesitamos trabajar lo solucionamos con stash (stash es un lugar temporal en el que guardamos los cambios pero estos no son directamente formalmente terminados) stash es un borrador
 
-`$ git   stash`
+`$ git stash`
 
 Guarda los cambios en una zona de borrador.
 
-`$ git   stash list`
+`$ git stash list`
 
 Nos muestran los archivos guardados en el stash
 
-`$ git   stash show`
+`$ git stash show`
 
 Nos muesta el archivo preciso en el que se modifico el codigo del stash.
 
-`$ git   stash show -p`
+`$ git stash show -p`
 
 Nos muestra las lineas que fueron modificadas por este stash.
 
-`$ git   stash apply indice-del-cambio(si no agrego nada, devuelve todo)`
+`$ git stash apply indice-del-cambio(si no agrego nada, devuelve todo)`
 
 Devolvemos los cambios al area de trabajo.
 
-`$ git   stash push -m "comentario al stash"`
+`$ git stash push -m "comentario al stash"`
 
 Agregamos un comentario al stash para identificarlo mejor.
 
-`$ git   stash pop indice-del-cambio(si no lo agrego borra el primero)`
+`$ git stash pop indice-del-cambio(si no lo agrego borra el primero)`
 
 Elimina el stash que seleccionamos.
 
-`$ git   stash drop indice-del-cambio`
+`$ git stash drop indice-del-cambio`
 
 Elimina el stash que seleccionamos.
 
@@ -444,7 +447,7 @@ Elimina el stash que seleccionamos.
 
 Un cherry pick es un proceso de traer los cambios de un commit a un merge, lo que sucede es que no hacemos un merge completo y el commit que hicimos se duplica ya que no elimina el de la rama secundaria, lo que sucede en ese caso es que tendremos dos commits identicos, si luego hacemos un merge completo de la rama.
 
-`$ git   cherry-pick codigo_de_commit`
+`$ git cherry-pick codigo_de_commit`
 
 ### estudiar milesthons
 
@@ -454,11 +457,11 @@ Un cherry pick es un proceso de traer los cambios de un commit a un merge, lo qu
 
 Lo que hacemos con git rebase, es tomar toda la rama x y colocarla por delante de la rama y, lo que pasa es que se sobre escribe el historial de las ramas y cambian los codigos de los commits, afectamos los historiales, si no se quiere modificar el historial lo mejor seria hacer un merge.
 
-`$ git   rebase nombre-de-la-rama`
+`$ git rebase nombre-de-la-rama`
 
 Lo que hace git squash es unir todos los commits en uno solo, pero no se hace el commit automatico sino que se queda en el stage area y para terminarlo, se debe hacer un commit nuevo, que contiene todos los commits anteriores.
 
-`$ git   merge --squash nombre-de-la-rama`
+`$ git merge --squash nombre-de-la-rama`
 
 Debe acompañarse con un nuevo commit
 
