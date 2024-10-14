@@ -1,5 +1,54 @@
 # Codigos de Git
 
+En este repositorio se encuentran todos los codigos indispensables para trabajar con git y algunas teorias basicas del funcionamiento de estrategias de branches, teoria sobre funcionalidades de git etc.
+
+## Tabla de contenido
+
+- [Codigos de Git](#codigos-de-git)
+  - [Tabla de contenido](#tabla-de-contenido)
+  - [Teoria:](#teoria)
+    - [Repositorio](#repositorio)
+    - [Directorio](#directorio)
+    - [Stache](#stache)
+  - [Adicionales](#adicionales)
+    - [Moverse entre carpetas](#moverse-entre-carpetas)
+    - [Interacciones en consola](#interacciones-en-consola)
+  - [Instalar Git](#instalar-git)
+  - [Configuración](#configuración)
+    - [Configuraciones iniciales](#configuraciones-iniciales)
+    - [Configurar el editor de codigo](#configurar-el-editor-de-codigo)
+  - [Codigos](#codigos)
+    - [Inciar Git](#inciar-git)
+    - [Deshacer commits](#deshacer-commits)
+    - [Ramas de Git](#ramas-de-git)
+    - [Git Branch](#git-branch)
+    - [Git Merge](#git-merge)
+    - [Merge conflic](#merge-conflic)
+    - [ALIAS](#alias)
+    - [Recuperación de commits](#recuperación-de-commits)
+  - [GIT Y GITHUB](#git-y-github)
+    - [Ejemplo Pagina Web:](#ejemplo-pagina-web)
+    - [git stash, git stash apply git stash pop](#git-stash-git-stash-apply-git-stash-pop)
+    - [estudiar git cherry-pick](#estudiar-git-cherry-pick)
+    - [estudiar milesthons](#estudiar-milesthons)
+    - [estudiar tags](#estudiar-tags)
+    - [estudiar rebase y squash](#estudiar-rebase-y-squash)
+    - [estudiar estrategias de branching](#estudiar-estrategias-de-branching)
+      - [Git Flow](#git-flow)
+        - [Introducción](#introducción)
+        - [Descripción general de la estrategia de Git Flow](#descripción-general-de-la-estrategia-de-git-flow)
+        - [Herramientas e integraciones de flujo de trabajo](#herramientas-e-integraciones-de-flujo-de-trabajo)
+        - [Desafíos comunes](#desafíos-comunes)
+    - [estudiar submodulos](#estudiar-submodulos)
+    - [estudiar git biseck](#estudiar-git-biseck)
+    - [estudiar git hooks](#estudiar-git-hooks)
+    - [estudiar gitflow, githubflow](#estudiar-gitflow-githubflow)
+  - [Conventional Commits](#conventional-commits)
+    - [Resumen](#resumen)
+    - [El commit contiene los siguientes elementos estructurales, para comunicar la intención a los consumidores de tu librería:](#el-commit-contiene-los-siguientes-elementos-estructurales-para-comunicar-la-intención-a-los-consumidores-de-tu-librería)
+    - [Especificación](#especificación)
+  - [Links, para más información de git:](#links-para-más-información-de-git)
+
 ## Teoria:
 
 ### Repositorio
@@ -92,17 +141,16 @@ ACTIVAR EL CRLF
 
 Lo que hace es que copia abajo y vuelve al inicio de la linea (como las maquinas de escribir).
 
-## Inciar Git
+## Codigos
 
-### Pasos
+### Inciar Git
 
 1. Crear un directorio.
 2. Entrar a la ruta del directorio por consola.
 3. Inicializar Git
+4. Comenzar en git
 
 `$ git init`
-
-### Codigos
 
 PARA VER LOS ARCHIVOS EN LA CARPETA
 
@@ -142,13 +190,13 @@ SI QUEREMOS RECUPERAR UN ARCHIVO BORRADO
 
 `$ git restore nombre_de_archivo`
 
+SI QUEREMOS DEVOLVER LOS CAMBIOS A COMO ESTÁN EN REMOTO
+
+`$ git restore codigo_commit`
+
 SI QUEREMOS DEVOLVER TODO A COMO ESTA EN EL STAGE Y NO LO SUBIMOS AL AREA DE STAGE (pierde los cambios)
 
 `$ git checkout nombre_de_archivo`
-
-CUANDO QUEREMOS DEVOLVER TODO DESDE EL REPOSITORIO Y CAMBIAR EL STAGE Y EL LOCAL (pierde los cambios)
-
-`$ git reset --hard`
 
 MOSTRAR LOS CAMBIOS SIN MUCHA HABLADERA DE PAJA
 
@@ -207,6 +255,8 @@ SI AUN ASI QUIRES MODIFICAR UN COMMIT ANTERIOR
 LUEGO PARA DEVOLVER LOS COMMIT QUE CARGAMOS
 
 `$ git rebase --continue`
+
+### Deshacer commits
 
 FORMAS DE DESACER COMMITS
 
@@ -270,7 +320,21 @@ MODIFICAR RAMAS (si no estoy en la rama)
 
 Si estoy en la rama.
 
-HACER UN MERGE
+FORZAR EL MOVER LAS RAMAS
+
+`$ git branch -f name-branch codigo_commit (or HEAD~Index)`
+
+Este codigo funciona, sin la necesidad de estar posicionado en la rama, que se desea mover.
+
+`$ git checkout HEAD~Index`
+
+Con este codigo podemos mover el head de la rama en la que estamos posicionados.
+
+`$ git checkout HEAD^`
+
+Podemos retroceder un espacio y con más `^^^` retrocedemos mas espacios.
+
+### Git Merge
 
 `$ git merge nombre-de-la-rama`
 
@@ -303,6 +367,8 @@ MOSTRAR TODOS LOS COMMITS Y ADEMAS GRAFICARLOS POR LAS RAMAS
 Los alias no llevan git
 
 `$ git config --global alias.nombre-del-alias "todo el codigo que queremos resumir en alias"`
+
+### Recuperación de commits
 
 PARA RECUPERAR UN COMMIT BORRADO
 
@@ -405,7 +471,7 @@ si queremos configurar el push con todo eso por defecto agregar -u
             -   stage cambios-del-boton
                 -   commit "creación del diseño del boton hamburguesa"
                 -   commit "funcionalidad del boton hamburguesa"
-                 -   commit "Solución de problemas del boton hamburguesa inicial y cambios de colores en el diseño"
+                -   commit "Solución de problemas del boton hamburguesa inicial y cambios de colores en el diseño"
 
 ### git stash, git stash apply git stash pop
 
@@ -447,7 +513,11 @@ Elimina el stash que seleccionamos.
 
 Un cherry pick es un proceso de traer los cambios de un commit a un merge, lo que sucede es que no hacemos un merge completo y el commit que hicimos se duplica ya que no elimina el de la rama secundaria, lo que sucede en ese caso es que tendremos dos commits identicos, si luego hacemos un merge completo de la rama.
 
-`$ git cherry-pick codigo_de_commit`
+`$ git cherry-pick codigo_de_commit ...`
+
+Otra forma de crear un cherry-pick es con rebase, con esto logramos tener una ventana interactiva que nos permite elegir de multiples commits, cual queremos utilizar, y cuales no, reordenarlos etc, es mas simple si no queremos trabajar tan profundamente con los hashes.
+
+`$ git rebase -i HEAD~Index (or codigo_commit)`
 
 ### estudiar milesthons
 
@@ -466,6 +536,44 @@ Lo que hace git squash es unir todos los commits en uno solo, pero no se hace el
 Debe acompañarse con un nuevo commit
 
 ### estudiar estrategias de branching
+
+#### Git Flow
+
+##### Introducción
+
+Este documento proporciona una descripción general de la estrategia de control de versiones de Git Flow, diseñada para administrar el desarrollo de funciones de manera eficaz.
+
+##### Descripción general de la estrategia de Git Flow
+
+La estrategia de Git Flow es un modelo de ramificación que ayuda a optimizar el desarrollo de funciones y la administración de versiones. Los componentes clave de esta estrategia incluyen:
+
+-   **Ramas de funciones**: se utilizan para desarrollar nuevas funciones.
+-   **Ramas de versiones**: se utilizan para preparar una nueva versión de producción.
+-   **Ramas de revisión**: se utilizan para parches rápidos para producción.
+-   **Rama maestra**: contiene código listo para producción.
+-   **Rama de desarrollo**: integra funciones para la próxima versión.
+
+##### Herramientas e integraciones de flujo de trabajo
+
+Para mejorar la estrategia de Git Flow, se utilizan las siguientes herramientas e integraciones:
+
+-   **Herramientas de integración continua/implementación continua (CI/CD)**: automatizan las pruebas y la implementación.
+-   **Plataformas de revisión de código**: facilitan las revisiones por pares y mantienen la calidad del código.
+-   **Sistemas de seguimiento de problemas**: administran tareas y realizan un seguimiento del progreso.
+-   **Herramientas de documentación**: garantiza una documentación completa y accesible.
+
+##### Desafíos comunes
+
+Los usuarios pueden encontrar los siguientes desafíos al implementar la estrategia de Git Flow:
+
+-   Comprender la gestión de ramas
+-   Resolver conflictos de fusión
+-   Mantener las ramas actualizadas
+-   Cumplir con las pautas de los mensajes de confirmación
+
+PARA UTILIZAR GIT FLOW EN GIT
+
+` $ git flow init`
 
 ### estudiar submodulos
 
@@ -576,3 +684,8 @@ Tipos diferentes a feat y fix PUEDEN ser usados en los mensajes de commit, ej., 
 Las unidades de información que componen Commits Convencionales NO DEBEN ser tratados como implementadores sensitivos de caso, con la excepción de BREAKING CHANGE que DEBE ir en mayúsculas.
 
 BREAKING-CHANGE DEBE ser sinónimo de BREAKING CHANGE, cuando se usa en una nota al pie.
+
+## Links, para más información de git:
+
+1. [Ejemplos interactivos y documentación](https://antonz.org/git-by-example/)
+2. [Juegos para aprender Git](https://learngitbranching.js.org/?locale=es_ES)
