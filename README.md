@@ -2,6 +2,8 @@
 
 En este repositorio se encuentran todos los codigos indispensables para trabajar con git y algunas teorias basicas del funcionamiento de estrategias de branches, teoria sobre funcionalidades de git etc.
 
+---
+
 ## Tabla de contenido
 
 - [Codigos de Git](#codigos-de-git)
@@ -21,17 +23,15 @@ En este repositorio se encuentran todos los codigos indispensables para trabajar
     - [Inciar Git](#inciar-git)
     - [Deshacer commits](#deshacer-commits)
     - [Ramas de Git](#ramas-de-git)
-    - [Git Branch](#git-branch)
     - [Git Merge](#git-merge)
     - [Merge conflic](#merge-conflic)
     - [ALIAS](#alias)
     - [Recuperación de commits](#recuperación-de-commits)
   - [GIT Y GITHUB](#git-y-github)
+    - [Git Remote](#git-remote)
     - [Ejemplo Pagina Web:](#ejemplo-pagina-web)
     - [git stash, git stash apply git stash pop](#git-stash-git-stash-apply-git-stash-pop)
     - [estudiar git cherry-pick](#estudiar-git-cherry-pick)
-    - [estudiar milesthons](#estudiar-milesthons)
-    - [estudiar tags](#estudiar-tags)
     - [estudiar rebase y squash](#estudiar-rebase-y-squash)
     - [estudiar estrategias de branching](#estudiar-estrategias-de-branching)
       - [Git Flow](#git-flow)
@@ -39,15 +39,11 @@ En este repositorio se encuentran todos los codigos indispensables para trabajar
         - [Descripción general de la estrategia de Git Flow](#descripción-general-de-la-estrategia-de-git-flow)
         - [Herramientas e integraciones de flujo de trabajo](#herramientas-e-integraciones-de-flujo-de-trabajo)
         - [Desafíos comunes](#desafíos-comunes)
-    - [estudiar submodulos](#estudiar-submodulos)
-    - [estudiar git biseck](#estudiar-git-biseck)
-    - [estudiar git hooks](#estudiar-git-hooks)
-    - [estudiar gitflow, githubflow](#estudiar-gitflow-githubflow)
   - [Conventional Commits](#conventional-commits)
     - [Resumen](#resumen)
     - [El commit contiene los siguientes elementos estructurales, para comunicar la intención a los consumidores de tu librería:](#el-commit-contiene-los-siguientes-elementos-estructurales-para-comunicar-la-intención-a-los-consumidores-de-tu-librería)
     - [Especificación](#especificación)
-  - [Links, para más información de git:](#links-para-más-información-de-git)
+  - [Links, para más información de Git:](#links-para-más-información-de-git)
 
 ## Teoria:
 
@@ -107,6 +103,8 @@ CUANDO CONFIGURAMOS LO QUE TENDREMOS EN GIT NECESITAMOS ENTENDER ESTO PARA DAR L
 -   Global: Solo un usuarios en la computadora
 -   Local: Solo los repositorios
 
+---
+
 ### Configuraciones iniciales
 
 NOMBRE DE USUARIO
@@ -128,6 +126,8 @@ TODAS LAS CONFIGURACIONES QUE YA TENEMOS EN GIT DEFINIDAS
 COLOREAR LA INTERFACE
 
 `$ git config --global color.ui true`
+
+---
 
 ### Configurar el editor de codigo
 
@@ -256,6 +256,8 @@ LUEGO PARA DEVOLVER LOS COMMIT QUE CARGAMOS
 
 `$ git rebase --continue`
 
+---
+
 ### Deshacer commits
 
 FORMAS DE DESACER COMMITS
@@ -272,9 +274,9 @@ Forma de borrado media, lo que sucede es que eliminamos y no agrega ni elimina n
 
 Forma de borrado fuerte, elimina y sobreescribe todo, desde area de trabajo, staging y commit.
 
-### Ramas de Git
+---
 
-### Git Branch
+### Ramas de Git
 
 -   Volver de una rama diferente a la master, se llama merge
 
@@ -334,11 +336,15 @@ Con este codigo podemos mover el head de la rama en la que estamos posicionados.
 
 Podemos retroceder un espacio y con más `^^^` retrocedemos mas espacios.
 
+---
+
 ### Git Merge
 
 `$ git merge nombre-de-la-rama`
 
 Tengo que estar en la rama que voy a la que voy a unir; las ramas seguiran existiendo, solo que se une a la otra.
+
+---
 
 ### Merge conflic
 
@@ -362,11 +368,15 @@ MOSTRAR TODOS LOS COMMITS Y ADEMAS GRAFICARLOS POR LAS RAMAS
 
 `$ git log --oneline --all --graph`
 
+---
+
 ### ALIAS
 
 Los alias no llevan git
 
 `$ git config --global alias.nombre-del-alias "todo el codigo que queremos resumir en alias"`
+
+---
 
 ### Recuperación de commits
 
@@ -380,11 +390,12 @@ RECUPERAR TODAS LAS REFERENCIAS DEL HEAD Y SUS MOVIMIENTO
 
 `$ git reflog`
 
----
-
 ## GIT Y GITHUB
 
+### Git Remote
+
 GUARDAR EL ENLACE DEL REPOSITORIO REMOTO
+
 `git remote add origin https://remote-repo-url`
 
 CLONAR UN REPOSITORIO EN LA NUBE
@@ -435,7 +446,7 @@ si queremos configurar el push con todo eso por defecto agregar -u
 
 ---
 
--   Un fork es hacer una copia de un repositorio en mi repositorio de github.
+-   Un fork es hacer una copia de un repositorio en mi repositorio de Github.
 
 -   Un issue es una lista de tareas de un proyecto completo.
 
@@ -473,6 +484,8 @@ si queremos configurar el push con todo eso por defecto agregar -u
                 -   commit "funcionalidad del boton hamburguesa"
                 -   commit "Solución de problemas del boton hamburguesa inicial y cambios de colores en el diseño"
 
+---
+
 ### git stash, git stash apply git stash pop
 
 Si tenemos cambios que necesitamos guardar para cambiarnos a una rama que necesitamos trabajar lo solucionamos con stash (stash es un lugar temporal en el que guardamos los cambios pero estos no son directamente formalmente terminados) stash es un borrador
@@ -509,6 +522,8 @@ Elimina el stash que seleccionamos.
 
 Elimina el stash que seleccionamos.
 
+---
+
 ### estudiar git cherry-pick
 
 Un cherry pick es un proceso de traer los cambios de un commit a un merge, lo que sucede es que no hacemos un merge completo y el commit que hicimos se duplica ya que no elimina el de la rama secundaria, lo que sucede en ese caso es que tendremos dos commits identicos, si luego hacemos un merge completo de la rama.
@@ -519,23 +534,30 @@ Otra forma de crear un cherry-pick es con rebase, con esto logramos tener una ve
 
 `$ git rebase -i HEAD~Index (or codigo_commit)`
 
+<!--
 ### estudiar milesthons
+
+***
 
 ### estudiar tags
 
+*** -->
+
 ### estudiar rebase y squash
 
-Lo que hacemos con git rebase, es tomar toda la rama x y colocarla por delante de la rama y, lo que pasa es que se sobre escribe el historial de las ramas y cambian los codigos de los commits, afectamos los historiales, si no se quiere modificar el historial lo mejor seria hacer un merge.
+Lo que hacemos con Git rebase, es tomar toda la rama x y colocarla por delante de la rama y, lo que pasa es que se sobre escribe el historial de las ramas y cambian los codigos de los commits, afectamos los historiales, si no se quiere modificar el historial lo mejor seria hacer un merge.
 
 `$ git rebase nombre-de-la-rama`
 
-Lo que hace git squash es unir todos los commits en uno solo, pero no se hace el commit automatico sino que se queda en el stage area y para terminarlo, se debe hacer un commit nuevo, que contiene todos los commits anteriores.
+Lo que hace Git squash es unir todos los commits en uno solo, pero no se hace el commit automatico sino que se queda en el stage area y para terminarlo, se debe hacer un commit nuevo, que contiene todos los commits anteriores.
 
 `$ git merge --squash nombre-de-la-rama`
 
 Debe acompañarse con un nuevo commit
 
 ### estudiar estrategias de branching
+
+---
 
 #### Git Flow
 
@@ -571,17 +593,41 @@ Los usuarios pueden encontrar los siguientes desafíos al implementar la estrate
 -   Mantener las ramas actualizadas
 -   Cumplir con las pautas de los mensajes de confirmación
 
-PARA UTILIZAR GIT FLOW EN GIT
+PARA INICIAR GITFLOW EN GIT
 
 ` $ git flow init`
 
-### estudiar submodulos
+Dar enter en todo lo que nos pregunta, por convención se recomienda no editarlo, si la estrategia que utilizamos es GitFlow, lo ideal es utilizar este codigo ya que con pocos comandos, nos permite hacer lo que hariamos con el doble de comandos.
 
-### estudiar git biseck
+La información que utilizare para explicar estos comandos los extrage del sitio web [Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) si quiere revisar de forma más detallada.
 
-### estudiar git hooks
+PARA CREAR CUALQUIER RAMA CON GITFLOW
 
-### estudiar gitflow, githubflow
+`$ git flow feature start nombre-de-la-rama`
+
+PARA CERRAR LA RAMA
+
+`$ git flow feature finish nombre-de-la-rama`
+
+En nosotros queda el utilizar correctamente la creacion y terminación de las ramas.
+
+La rama se elimina automaticamente despues de realizar el merge de la misma con `develop`.
+
+El flujo general de Gitflow es:
+
+1. A `develop` la rama se crea a partir de `main`
+
+2. A `release` la rama se crea a partir de ``develop``
+
+3. Feature las ramas se crean a partir de `develop`
+
+4. Cuando a feature está completo se fusiona en el `develop` rama
+
+5. Cuando el `release` la rama se hace en la que se fusiona `develop` y `main`
+
+6. Si un problema en `main` se detecta a `hotfix` la rama se crea a partir de `main`
+
+7. Una vez que el `hotfix` está completo, se fusiona con ambos `develop` y `main`
 
 ## Conventional Commits
 
@@ -607,7 +653,7 @@ El mensaje del commit debe ser estructurado de la siguiente manera:
 
 -   tipos distintos a fix: y feat: están permitidos, por ejemplo @commitlint/config-conventional (basados en la convención de Angular) que recomienda build:, chore:, ci:, docs:, style:, refactor:, perf:, test:, y otros.
 
--   notas al pie distintas de BREAKING CHANGE: <descripción> pueden ser añadidas y siguen una convención similar al formato git trailer.
+-   notas al pie distintas de BREAKING CHANGE: <descripción> pueden ser añadidas y siguen una convención similar al formato Git trailer.
 
 Tipos adicionales no son obligatorios en la especificación de Commits Convencionales, y no tienen un efecto implícito en el Versionado Semántico (al menos que incluyan un BREAKING CHANGE). Un ámbito puede ser añadido al tipo de un commit, para proveer información adicional contextual y debe ser contenido entre paréntesis, ej., feat(parser): add ability to parse arrays.
 
@@ -667,7 +713,7 @@ Un cuerpo de commit más extenso PUEDE agregarse después de la descripción cor
 
 Un cuerpo de commit es de forma-libre y PUEDE consistir de cualquier número de párrafos separados por una nueva línea.
 
-Una o más notas al pie PUEDEN ser añadidas una línea en blanco después del cuerpo. Cada nota al pie DEBE consistir de una palabra clave, seguida ya sea por un separador :<espacio> o <espacio>#, seguido por un valor cadena (string) (esto está inspirado por la convención git trailer).
+Una o más notas al pie PUEDEN ser añadidas una línea en blanco después del cuerpo. Cada nota al pie DEBE consistir de una palabra clave, seguida ya sea por un separador :<espacio> o <espacio>#, seguido por un valor cadena (string) (esto está inspirado por la convención Git trailer).
 
 Una palabra clave de una nota al pie DEBE usar - en lugar de caracteres de espacios en blanco, ej., Acked-by (esto ayuda a diferenciar la sección de la nota al pie de un cuerpo multi párrafo). Se hace una excepción para BREAKING CHANGE, que también PUEDE ser usada como palabra clave.
 
@@ -685,7 +731,25 @@ Las unidades de información que componen Commits Convencionales NO DEBEN ser tr
 
 BREAKING-CHANGE DEBE ser sinónimo de BREAKING CHANGE, cuando se usa en una nota al pie.
 
-## Links, para más información de git:
+<!-- ***
+
+### estudiar submodulos
+
+***
+
+### estudiar git biseck
+
+***
+
+### estudiar git hooks
+
+***
+
+### estudiar gitflow, githubflow
+
+ -->
+
+## Links, para más información de Git:
 
 1. [Ejemplos interactivos y documentación](https://antonz.org/git-by-example/)
 2. [Juegos para aprender Git](https://learngitbranching.js.org/?locale=es_ES)
