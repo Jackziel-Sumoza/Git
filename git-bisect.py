@@ -1,7 +1,13 @@
-a = "Variable 1"
-b = "Variable 2"
+# creamos un objeto que contiene el metodo presentar, para presentar a una persona registrada en una base de datos
+class PersonaNatural():
+    def __init__(self,nombre_usuario,apellido_usuario,profesion):
+        self.nombre = nombre_usuario
+        self.apellido = apellido_usuario
+        self.profesion = profesion
+        
+    def presentar(self):
+        return f"¡Hola! mi nombre es {self.nombre} {self.apellido} y soy {self.profesion}"
 
-def hello(var_1, var_2):
-    return f"Esta es {a} y esta es la {b}"
+jackziel_sumoza = PersonaNatural("Jackziel","Sumoza","Programador Web")
 
-print(hello(a,b))
+print(jackziel_sumoza.presentar())
