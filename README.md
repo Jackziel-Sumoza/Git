@@ -1,14 +1,14 @@
-# Codigos de Git
+# Códigos de Git
 
-En este repositorio se encuentran todos los codigos indispensables para trabajar con git y algunas teorias basicas del funcionamiento de estrategias de branches, teoria sobre funcionalidades de git etc.
+En este repositorio se encuentran todos los códigos indispensables para trabajar con git y algunas teorías básicas del funcionamiento de estrategias de branches, teoría sobre funcionalidades de git etc.
 
 ---
 
 ## Tabla de contenido
 
-- [Codigos de Git](#codigos-de-git)
+- [Códigos de Git](#códigos-de-git)
   - [Tabla de contenido](#tabla-de-contenido)
-  - [Teoria:](#teoria)
+  - [Teoría:](#teoría)
     - [Repositorio](#repositorio)
     - [Directorio](#directorio)
     - [Stache](#stache)
@@ -18,9 +18,9 @@ En este repositorio se encuentran todos los codigos indispensables para trabajar
   - [Instalar Git](#instalar-git)
   - [Configuración](#configuración)
     - [Configuraciones iniciales](#configuraciones-iniciales)
-    - [Configurar el editor de codigo](#configurar-el-editor-de-codigo)
-  - [Codigos](#codigos)
-    - [Inciar Git](#inciar-git)
+    - [Configurar el editor de código](#configurar-el-editor-de-código)
+  - [Códigos](#códigos)
+    - [Iniciar Git](#iniciar-git)
     - [Deshacer commits](#deshacer-commits)
     - [Ramas de Git](#ramas-de-git)
     - [Git Merge](#git-merge)
@@ -39,7 +39,7 @@ En este repositorio se encuentran todos los codigos indispensables para trabajar
         - [Descripción general de la estrategia de Git Flow](#descripción-general-de-la-estrategia-de-git-flow)
         - [Herramientas e integraciones de flujo de trabajo](#herramientas-e-integraciones-de-flujo-de-trabajo)
         - [Desafíos comunes](#desafíos-comunes)
-        - [¿Comó utilizar GitFlow?](#comó-utilizar-gitflow)
+        - [¿Cómo utilizar GitFlow?](#cómo-utilizar-gitflow)
   - [Conventional Commits](#conventional-commits)
     - [Resumen](#resumen)
     - [El commit contiene los siguientes elementos estructurales, para comunicar la intención a los consumidores de tu librería:](#el-commit-contiene-los-siguientes-elementos-estructurales-para-comunicar-la-intención-a-los-consumidores-de-tu-librería)
@@ -52,17 +52,17 @@ En este repositorio se encuentran todos los codigos indispensables para trabajar
     - [estudiar gitflow, githubflow](#estudiar-gitflow-githubflow)
   - [Links, para más información de Git:](#links-para-más-información-de-git)
 
-## Teoria:
+## Teoría:
 
 ### Repositorio
 
 Un repositorio es un espacio(carpeta) donde guardamos todo lo que hacemos en el proyecto; el repositorio es donde esta todo, archivos junto con cambios
 
-El repositorio es donde estan todos los archivos terminados
+El repositorio es donde están todos los archivos terminados
 
 ### Directorio
 
-El area de trabajo es el directorio(carpeta), donde estan todos los archivos, donde trabajamos.
+El area de trabajo es el directorio(carpeta), donde están todos los archivos, donde trabajamos.
 
 ### Stache
 
@@ -74,9 +74,9 @@ El staching es donde estamos modificando, es un estado de preparación (staching
 
 `cd [para mover hacia adelante]`
 
-`cd ../ [para mover hacia atras]`
+`cd ../ [para mover hacia atrás]`
 
-`cd .. [para mover hacia atras]`
+`cd .. [para mover hacia atrás]`
 
 ### Interacciones en consola
 
@@ -100,7 +100,7 @@ ABRIR VISUAL STUDIO CODE
 
 ## Instalar Git
 
-Intalar git en la pagina oficial.
+Instalar git en la pagina oficial.
 
 ## Configuración
 
@@ -136,11 +136,11 @@ COLOREAR LA INTERFACE
 
 ---
 
-### Configurar el editor de codigo
+### Configurar el editor de código
 
 `$ git config --global core.editor "code --wait"`
 
-Lo que significa --wait, es para que cuando modifiquemos algo en visual studio code, se envie y confirme al cerrar visual studio code
+Lo que significa --wait, es para que cuando modifiquemos algo en visual studio code, se envié y confirme al cerrar visual studio code
 
 ACTIVAR EL CRLF
 
@@ -148,9 +148,9 @@ ACTIVAR EL CRLF
 
 Lo que hace es que copia abajo y vuelve al inicio de la linea (como las maquinas de escribir).
 
-## Codigos
+## Códigos
 
-### Inciar Git
+### Iniciar Git
 
 1. Crear un directorio.
 2. Entrar a la ruta del directorio por consola.
@@ -177,7 +177,7 @@ PARA CARGAR LOS ARCHIVOS QUE DESEEMOS AL SER MODIFICADOS
 
 Si en vez de nombre colocamos (.) se suben todos los archivos. Con add lo pasamos al area de preparación y no mas area de trabajo
 
-VER INFORMACION SOBRE NUESTRA AREA DE TRABAJO Y SOBRE LOS ARCHIVOS DEL REPOSITORIO ETC
+VER INFORMACIÓN SOBRE NUESTRA AREA DE TRABAJO Y SOBRE LOS ARCHIVOS DEL REPOSITORIO ETC
 
 `$ git status`
 
@@ -189,7 +189,7 @@ HACER UN COMMIT ES ENVIAR DE STAGE A COMMIT
 
 `$ git commit -m "mensaje que enviamos en el comentario"`
 
-`$ git commit "con el comentario escrito desde el editor de codigo"`
+`$ git commit "con el comentario escrito desde el editor de código"`
 
 `$ git commit -m "enviar directamente desde area de trabajo al commit" -a`
 
@@ -199,13 +199,13 @@ SI QUEREMOS RECUPERAR UN ARCHIVO BORRADO
 
 SI QUEREMOS DEVOLVER LOS CAMBIOS A COMO ESTÁN EN REMOTO
 
-`$ git restore codigo_commit`
+`$ git restore código_commit`
 
 SI QUEREMOS DEVOLVER TODO A COMO ESTA EN EL STAGE Y NO LO SUBIMOS AL AREA DE STAGE (pierde los cambios)
 
 `$ git checkout nombre_de_archivo`
 
-MOSTRAR LOS CAMBIOS SIN MUCHA HABLADERA DE PAJA
+MOSTRAR LOS CAMBIOS RESUMIDO
 
 `$ git status -s`
 
@@ -227,21 +227,21 @@ PARA VER LOS COMMIT QUE HAY Y SUS DATOS
 
 `$ git log --oneline`
 
-Muestra un resumen del identificador del commit sin datos de usuarios etc. Hay posibilidades que al resumir la forma en la que se identifica el commit se repita cuando hay miles de commits, para ello se debe cambiar el resumidor a 10 caracteres.
+Muestra un resumen del identificador del commit sin datos de usuarios etc. Hay posibilidades que al resumir la forma en la que se identifica el commit se repita cuando hay miles de commits, para ello se debe cambiar el resumido a 10 caracteres.
 
 `$ git config --global core.abbrev "cantidad de caracteres"`
 
-PARA VER LAS DIFERENCIAS PUNTUALES ENTRE LOS GOMMIT
+PARA VER LAS DIFERENCIAS PUNTUALES ENTRE LOS COMMIT
 
-`$ git diff "codigo de commit" "codigo de commit"`
+`$ git diff "código de commit" "código de commit"`
 
 PARA VER SOLO EL NOMBRE DE LOS ARCHIVOS CAMBIADOS
 
-`$ git diff --name-only "codigo de commit" "codigo de commit"`
+`$ git diff --name-only "código de commit" "código de commit"`
 
 PARA VER LAS LINEAS DE LOS ARCHIVOS QUE CAMBIARON
 
-`$ git diff --word-diff "codigo de commit" "codigo de commit"`
+`$ git diff --word-diff "código de commit" "código de commit"`
 
 PARA MODIFICAR UN COMMIT
 
@@ -249,15 +249,15 @@ PARA MODIFICAR UN COMMIT
 
 Modificar el comentario dentro del commit
 
-si lo que quremos es subir cosas nuevas al commit, tenemos que preparar todo como si fueramos a hacer un nuevo commit y luego hacemos lo mismo que en lo anterior.
+si lo que queremos es subir cosas nuevas al commit, tenemos que preparar todo como si fuéramos a hacer un nuevo commit y luego hacemos lo mismo que en lo anterior.
 
 El (HEAD-MASTER) lo que quiere decir es donde estamos posicionados con respecto a las ramas, en que commit estamos posicionados
 
-Si lo que queremos es modificar un commit anterior, lo que sucedera es que se eliminaran todos los que esten despues de ese commit.
+Si lo que queremos es modificar un commit anterior, lo que sucederá es que se eliminaran todos los que estén después de ese commit.
 
-SI AUN ASI QUIRES MODIFICAR UN COMMIT ANTERIOR
+SI AUN ASI QUIERES MODIFICAR UN COMMIT ANTERIOR
 
-`$ git rebase -i head~numero_de_indices_a_retroceder`
+`$ git rebase -i head~número_de_indices_a_retroceder`
 
 LUEGO PARA DEVOLVER LOS COMMIT QUE CARGAMOS
 
@@ -267,19 +267,19 @@ LUEGO PARA DEVOLVER LOS COMMIT QUE CARGAMOS
 
 ### Deshacer commits
 
-FORMAS DE DESACER COMMITS
+FORMAS DE DESHACER COMMITS
 
-`$ git reset --soft codigo_de_commit o head~numeros_a_volver`
+`$ git reset --soft código_de_commit o head~números_a_volver`
 
-Forma de borrado suave, agarra los archivos del borrado y lo envia al area de staging.
+Forma de borrado suave, agarra los archivos del borrado y lo envía al area de staging.
 
-`$ git reset --mixex codigo_de_commit o head~numeros_a_volver`
+`$ git reset --mixex código_de_commit o head~números_a_volver`
 
 Forma de borrado media, lo que sucede es que eliminamos y no agrega ni elimina nada del area de staging.
 
-`$ git reset --hard codigo_de_commit o head~numeros_a_volver`
+`$ git reset --hard código_de_commit o head~números_a_volver`
 
-Forma de borrado fuerte, elimina y sobreescribe todo, desde area de trabajo, staging y commit.
+Forma de borrado fuerte, elimina y sobrescribe todo, desde area de trabajo, staging y commit.
 
 ---
 
@@ -331,13 +331,13 @@ Si estoy en la rama.
 
 FORZAR EL MOVER LAS RAMAS
 
-`$ git branch -f name-branch codigo_commit (or HEAD~Index)`
+`$ git branch -f name-branch código_commit (or HEAD~Index)`
 
-Este codigo funciona, sin la necesidad de estar posicionado en la rama, que se desea mover.
+Este código funciona, sin la necesidad de estar posicionado en la rama, que se desea mover.
 
 `$ git checkout HEAD~Index`
 
-Con este codigo podemos mover el head de la rama en la que estamos posicionados.
+Con este código podemos mover el head de la rama en la que estamos posicionados.
 
 `$ git checkout HEAD^`
 
@@ -349,13 +349,13 @@ Podemos retroceder un espacio y con más `^^^` retrocedemos mas espacios.
 
 `$ git merge nombre-de-la-rama`
 
-Tengo que estar en la rama que voy a la que voy a unir; las ramas seguiran existiendo, solo que se une a la otra.
+Tengo que estar en la rama que voy a la que voy a unir; las ramas seguirán existiendo, solo que se une a la otra.
 
 ---
 
 ### Merge conflic
 
-Es ese conflicto que se da cuando al trabajar sobre otra rama, la rama mastes se modifica y luego nosotros queremos hacer un merge y no se sabe que modificacion hacer.
+Es ese conflicto que se da cuando al trabajar sobre otra rama, la rama master se modifica y luego nosotros queremos hacer un merge y no se sabe que modificación hacer.
 
 MOSTRAR LOS COMMITS DE TODAS LAS RAMAS
 
@@ -367,7 +367,7 @@ SI NO PUSIMOS CONTINUAR AL RESOLVER EL CONFLICTO
 
 ACCEDER A LOS ARCHIVOS
 
-`$ git lsr-tee -r --name-only codigo_de_commit`
+`$ git lsr-tee -r --name-only código_de_commit`
 
 Lo que hacemos con este es acceder a los archivos que posee un commit.
 
@@ -381,7 +381,7 @@ MOSTRAR TODOS LOS COMMITS Y ADEMAS GRAFICARLOS POR LAS RAMAS
 
 Los alias no llevan git
 
-`$ git config --global alias.nombre-del-alias "todo el codigo que queremos resumir en alias"`
+`$ git config --global alias.nombre-del-alias "todo el código que queremos resumir en alias"`
 
 ---
 
@@ -389,9 +389,9 @@ Los alias no llevan git
 
 PARA RECUPERAR UN COMMIT BORRADO
 
--   Se necesita tener el codigo_commit
+-   Se necesita tener el código_commit
 
-`$ git reset --hard codigo_commit`
+`$ git reset --hard código_commit`
 
 RECUPERAR TODAS LAS REFERENCIAS DEL HEAD Y SUS MOVIMIENTO
 
@@ -419,11 +419,11 @@ SUBIR EL REPOSITORIO A LA NUBE
 
 El clon mantiene la referencia al repositorio remoto.
 
-ACTUALIZAR EL CODIGO, TRAER EL CODIGO DEL REMOTO A MI REPOSITORIO LOCAL SE ACTUALIZA Y LE VALE MADRE LO QUE TENGAS, NO USAR SIN PENSAR
+ACTUALIZAR EL CÓDIGO, TRAER EL CÓDIGO DEL REMOTO A MI REPOSITORIO LOCAL SE ACTUALIZA Y LE VALE MADRE LO QUE TENGAS, NO USAR SIN PENSAR
 
 `$ git pull`
 
-ACTUALIZAR EL CODIGO, TRAER EL CODIGO DEL REMOTO Y EVALUAR COMO LO VAS A UTILIZAR (GIT PULL HACE GIT FETCH Y LUEGO GIT MERGE)
+ACTUALIZAR EL CÓDIGO, TRAER EL CÓDIGO DEL REMOTO Y EVALUAR COMO LO VAS A UTILIZAR (GIT PULL HACE GIT FETCH Y LUEGO GIT MERGE)
 
 `$ git fetch`
 
@@ -474,9 +474,9 @@ si queremos configurar el push con todo eso por defecto agregar -u
 -   Mantener el historial limpios.
 
 -   Commits innecesarios y no relacionables no se hacen
-    piensa lo siguiente, que haces mucho en un proyecto, haces cambios importante y al finalizar todo el proyecto es que haces el commit, lo que sucede es que si una parte de ese proyecto la quieres mover y usarla en otros lugares tendras que moverla completa y eso no es lo que quieres directamente.
+    piensa lo siguiente, que haces mucho en un proyecto, haces cambios importante y al finalizar todo el proyecto es que haces el commit, lo que sucede es que si una parte de ese proyecto la quieres mover y usarla en otros lugares tendrás que moverla completa y eso no es lo que quieres directamente.
 
--   ahora si haces muchos pequeños commits innecesarios, para hacer algo simple tendras que trasladar muchos commits para poder hacer algo simple como aplicar una funcionalidad a otra rama entonces se debe hayar un equilibro ahi.
+-   ahora si haces muchos pequeños commits innecesarios, para hacer algo simple tendrás que trasladar muchos commits para poder hacer algo simple como aplicar una funcionalidad a otra rama entonces se debe encontrar un equilibro ahi.
 
 -   ejemplo: cambio importante y significativo pequeño.
 
@@ -485,11 +485,11 @@ si queremos configurar el push con todo eso por defecto agregar -u
 -   rama-master
     -   header-de-la-Web
         -   header-de-la-web-responsive
-            -   boton-hamburguesa
-            -   stage cambios-del-boton
-                -   commit "creación del diseño del boton hamburguesa"
-                -   commit "funcionalidad del boton hamburguesa"
-                -   commit "Solución de problemas del boton hamburguesa inicial y cambios de colores en el diseño"
+            -   botón-hamburguesa
+            -   stage cambios-del-botón
+                -   commit "creación del diseño del botón hamburguesa"
+                -   commit "funcionalidad del botón hamburguesa"
+                -   commit "Solución de problemas del botón hamburguesa inicial y cambios de colores en el diseño"
 
 ---
 
@@ -507,7 +507,7 @@ Nos muestran los archivos guardados en el stash
 
 `$ git stash show`
 
-Nos muesta el archivo preciso en el que se modifico el codigo del stash.
+Nos muestra el archivo preciso en el que se modifico el código del stash.
 
 `$ git stash show -p`
 
@@ -535,11 +535,11 @@ Elimina el stash que seleccionamos.
 
 Un cherry pick es un proceso de traer los cambios de un commit a un merge, lo que sucede es que no hacemos un merge completo y el commit que hicimos se duplica ya que no elimina el de la rama secundaria, lo que sucede en ese caso es que tendremos dos commits identicos, si luego hacemos un merge completo de la rama.
 
-`$ git cherry-pick codigo_de_commit ...`
+`$ git cherry-pick código_de_commit ...`
 
 Otra forma de crear un cherry-pick es con rebase, con esto logramos tener una ventana interactiva que nos permite elegir de multiples commits, cual queremos utilizar, y cuales no, reordenarlos etc, es mas simple si no queremos trabajar tan profundamente con los hashes.
 
-`$ git rebase -i HEAD~Index (or codigo_commit)`
+`$ git rebase -i HEAD~Index (or código_commit)`
 
 <!--
 ### estudiar milesthons
@@ -552,7 +552,7 @@ Otra forma de crear un cherry-pick es con rebase, con esto logramos tener una ve
 
 ### estudiar rebase y squash
 
-Lo que hacemos con Git rebase, es tomar toda la rama x y colocarla por delante de la rama y, lo que pasa es que se sobre escribe el historial de las ramas y cambian los codigos de los commits, afectamos los historiales, si no se quiere modificar el historial lo mejor seria hacer un merge.
+Lo que hacemos con Git rebase, es tomar toda la rama x y colocarla por delante de la rama y, lo que pasa es que se sobre escribe el historial de las ramas y cambian los códigos de los commits, afectamos los historiales, si no se quiere modificar el historial lo mejor seria hacer un merge.
 
 `$ git rebase nombre-de-la-rama`
 
@@ -602,13 +602,13 @@ Los usuarios pueden encontrar los siguientes desafíos al implementar la estrate
 
 ![Imagen de Flujo Git](assets/gitflow-diagram.png)
 
-##### ¿Comó utilizar GitFlow?
+##### ¿Cómo utilizar GitFlow?
 
 PARA INICIAR GITFLOW EN GIT
 
 ` $ git flow init`
 
-Dar enter en todo lo que nos pregunta, por convención se recomienda no editarlo, si la estrategia que utilizamos es GitFlow, lo ideal es utilizar este codigo ya que con pocos comandos, nos permite hacer lo que hariamos con el doble de comandos.
+Dar enter en todo lo que nos pregunta, por convención se recomienda no editarlo, si la estrategia que utilizamos es GitFlow, lo ideal es utilizar este código ya que con pocos comandos, nos permite hacer lo que hariamos con el doble de comandos.
 
 La información que utilizare para explicar estos comandos los extrage del sitio web [Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) si quiere revisar de forma más detallada.
 
@@ -620,9 +620,9 @@ PARA CERRAR LA RAMA
 
 `$ git flow feature finish nombre-de-la-rama`
 
-En nosotros queda el utilizar correctamente la creacion y terminación de las ramas.
+En nosotros queda el utilizar correctamente la creación y terminación de las ramas.
 
-La rama se elimina automaticamente despues de realizar el merge de la misma con `develop`.
+La rama se elimina automáticamente después de realizar el merge de la misma con `develop`.
 
 El flujo general de Gitflow es:
 
@@ -785,7 +785,7 @@ A partir de ahí, Git bisect te irá mostrando diferentes commits. Tú simplemen
 
 En la **documentación oficial de git** [git-scm.com/docs/git-bisect](https://git-scm.com/docs/git-bisect) puede encontrar más información.
 
-Bisect significa (dividir en dos partes). Este es un metodo avanzado de depuración de codigo mediante Git con el que se pueden encontrar bugs y otros problemas en el codigo de forma rapida, puede resultar tedioso en un proyecto grande, a continuación solo se presentan unos comandos rapidos para utilizar git bisect
+Bisect significa (dividir en dos partes). Este es un metodo avanzado de depuración de código mediante Git con el que se pueden encontrar bugs y otros problemas en el código de forma rapida, puede resultar tedioso en un proyecto grande, a continuación solo se presentan unos comandos rapidos para utilizar git bisect
 
 COMANDOS PARA UTILIZAR GIT BISECT
 
@@ -793,8 +793,8 @@ COMANDOS PARA UTILIZAR GIT BISECT
 
 Esto iniciara la depuración, luego se debe identificar un rango, donde evaluaremos los problemas, para ellos debemos introducir.
 
-1. Donde tenemos los problemas de software `$ git bisect bad codigo_commit_actual` puede ser otro commit, solo es donde detectamos el problema.
-2. Donde sabemos que el codigo estaba bien `$ git bisect good codigo_commit_version_anterior` o donde sabemos que el codigo estaba bien.
+1. Donde tenemos los problemas de software `$ git bisect bad código_commit_actual` puede ser otro commit, solo es donde detectamos el problema.
+2. Donde sabemos que el código estaba bien `$ git bisect good código_commit_version_anterior` o donde sabemos que el código estaba bien.
 
 Esto iniciara una depuración donde nos ira mostrando multiples commits y nosotros debemos determinar uno a uno si es bueno o malo e ir corrigiendo. Esto lo hacemos con `$ git bisect bad` o `$ git bisect good`.
 
