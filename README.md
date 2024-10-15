@@ -39,10 +39,17 @@ En este repositorio se encuentran todos los codigos indispensables para trabajar
         - [Descripción general de la estrategia de Git Flow](#descripción-general-de-la-estrategia-de-git-flow)
         - [Herramientas e integraciones de flujo de trabajo](#herramientas-e-integraciones-de-flujo-de-trabajo)
         - [Desafíos comunes](#desafíos-comunes)
+        - [¿Comó utilizar GitFlow?](#comó-utilizar-gitflow)
   - [Conventional Commits](#conventional-commits)
     - [Resumen](#resumen)
     - [El commit contiene los siguientes elementos estructurales, para comunicar la intención a los consumidores de tu librería:](#el-commit-contiene-los-siguientes-elementos-estructurales-para-comunicar-la-intención-a-los-consumidores-de-tu-librería)
     - [Especificación](#especificación)
+    - [estudiar submodulos](#estudiar-submodulos)
+    - [estudiar git biseck](#estudiar-git-biseck)
+    - [¿Qué es Git Hooks?](#qué-es-git-hooks)
+      - [Pasos para activar un Hook](#pasos-para-activar-un-hook)
+      - [Pasos para crear un Hook personalizado](#pasos-para-crear-un-hook-personalizado)
+    - [estudiar gitflow, githubflow](#estudiar-gitflow-githubflow)
   - [Links, para más información de Git:](#links-para-más-información-de-git)
 
 ## Teoria:
@@ -593,6 +600,10 @@ Los usuarios pueden encontrar los siguientes desafíos al implementar la estrate
 -   Mantener las ramas actualizadas
 -   Cumplir con las pautas de los mensajes de confirmación
 
+![GitFlow Image](/Git/Git/assets/diagram-export-15-10-2024-13_05_15.png)
+
+##### ¿Comó utilizar GitFlow?
+
 PARA INICIAR GITFLOW EN GIT
 
 ` $ git flow init`
@@ -617,7 +628,7 @@ El flujo general de Gitflow es:
 
 1. A `develop` la rama se crea a partir de `main`
 
-2. A `release` la rama se crea a partir de ``develop``
+2. A `release` la rama se crea a partir de `develop`
 
 3. Feature las ramas se crean a partir de `develop`
 
@@ -731,25 +742,28 @@ Las unidades de información que componen Commits Convencionales NO DEBEN ser tr
 
 BREAKING-CHANGE DEBE ser sinónimo de BREAKING CHANGE, cuando se usa en una nota al pie.
 
-<!-- ***
+---
 
 ### estudiar submodulos
 
-***
+---
 
 ### estudiar git biseck
 
-***
+---
 
-### estudiar git hooks
+### ¿Qué es Git Hooks?
 
-***
+#### Pasos para activar un Hook
+
+#### Pasos para crear un Hook personalizado
+
+---
 
 ### estudiar gitflow, githubflow
-
- -->
 
 ## Links, para más información de Git:
 
 1. [Ejemplos interactivos y documentación](https://antonz.org/git-by-example/)
 2. [Juegos para aprender Git](https://learngitbranching.js.org/?locale=es_ES)
+3. [Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
