@@ -600,7 +600,7 @@ Los usuarios pueden encontrar los siguientes desafíos al implementar la estrate
 -   Mantener las ramas actualizadas
 -   Cumplir con las pautas de los mensajes de confirmación
 
-![Imagen de Flujo Git](assets/diagram-export-15-10-2024-16_17_29.png)
+![Imagen de Flujo Git](assets/gitflow-diagram.png)
 
 ##### ¿Comó utilizar GitFlow?
 
