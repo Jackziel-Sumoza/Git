@@ -17,4 +17,13 @@ Iniciamos insertando la estrategia de branches en Git, vamos a utilizar Git Flow
 6. Desde GitHub, hicimos un pull request y luego ejecutamos un Merge para convinar la rama develop, con la rama mastes, al hacer pull request nos saltamos el release (es lo mismo que el pull request).
 7. Creamos una nueva rama para explicar como funciona el git hooks.
    1. `$ git flow feature start git-hooks` 
-8. 
+8. Para utilizar git bisect, primero creamos un archivo, luego creamos una rama con el nombre de git-bisect, que es lo que estamos probando y luego ejecutamos unos problemas para corregirlos con git bisect.
+   1. `$ git flow feature git-bisect-init` 
+   2. `$ git add .` 
+   3. `$ git bisect start` 
+   4. `$ git bisect bad codigo_bad` 
+   5. `$ git bisect good codigo_good` 
+   6. `$ git add .` 
+   7. `$ git commit --amend` 
+   8. `$ git bisect reset`
+   9. > con esto logramos depurar el codigo y mantener el historial limpio y de forma correcta.
