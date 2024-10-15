@@ -45,7 +45,7 @@ En este repositorio se encuentran todos los codigos indispensables para trabajar
     - [El commit contiene los siguientes elementos estructurales, para comunicar la intención a los consumidores de tu librería:](#el-commit-contiene-los-siguientes-elementos-estructurales-para-comunicar-la-intención-a-los-consumidores-de-tu-librería)
     - [Especificación](#especificación)
     - [estudiar submodulos](#estudiar-submodulos)
-    - [estudiar git biseck](#estudiar-git-biseck)
+    - [¿Qué es Git bisect?](#qué-es-git-bisect)
     - [¿Qué es Git Hooks?](#qué-es-git-hooks)
       - [Pasos para activar un Hook](#pasos-para-activar-un-hook)
       - [Pasos para crear un Hook personalizado](#pasos-para-crear-un-hook-personalizado)
@@ -748,7 +748,59 @@ BREAKING-CHANGE DEBE ser sinónimo de BREAKING CHANGE, cuando se usa en una nota
 
 ---
 
-### estudiar git biseck
+### ¿Qué es Git bisect?
+
+**Git bisect** es una herramienta de depuración útil que se utiliza en Git para encontrar qué commit específico fue el primero en introducir un bug o problema en tu código.
+
+**Funcionamiento**
+
+Al tener una rama de Git con muchos commits y donde en uno de ellos se produce un error. Git bisect utiliza un algoritmo de búsqueda binaria para dividir eficientemente el historial de commits en dos partes:
+
+1. **Inicio:** Identificas un commit "bueno" (sin el error) y un commit "malo" (con el error).
+2. **Búsqueda binaria:** Git bisect selecciona un commit intermedio y te pregunta si ese commit es "bueno" o "malo".
+3. **Iteración:** Basándose la respuesta, Git bisect descarta la mitad del historial donde no se encuentra el error y repite el proceso con un nuevo commit intermedio.
+4. **Resultado:** Este proceso se repite hasta que se encuentra el commit exacto donde se introdujo el error.
+
+**Ventajas de usar git bisect:**
+
+-   **Eficiencia:** Al utilizar una búsqueda binaria, encuentra rápidamente el commit culpable, incluso en grandes historiales.
+-   **Automatización:** Gran parte del proceso es automatizado, lo que ahorra tiempo y reduce la posibilidad de errores humanos.
+-   **Precisión:** Identifica el commit exacto donde se introdujo el error, lo que facilita la depuración.
+
+**¿Cuándo usar git bisect?**
+
+-   Cuando tienes un bug difícil de reproducir y necesitas encontrar su origen.
+-   Cuando quieres entender cómo evolucionó una determinada característica en tu código.
+-   Cuando necesitas revertir un cambio que introdujo un error sin afectar otros cambios.
+
+**Ejemplo básico:**
+
+```bash
+git bisect start
+git bisect bad <hash del commit malo>
+git bisect good <hash del commit bueno>
+```
+
+A partir de ahí, Git bisect te irá mostrando diferentes commits. Tú simplemente tienes que indicar si cada commit es "bueno" o "malo".
+
+En la **documentación oficial de git** [git-scm.com/docs/git-bisect](https://git-scm.com/docs/git-bisect) puede encontrar más información.
+
+Bisect significa (dividir en dos partes). Este es un metodo avanzado de depuración de codigo mediante Git con el que se pueden encontrar bugs y otros problemas en el codigo de forma rapida, puede resultar tedioso en un proyecto grande, a continuación solo se presentan unos comandos rapidos para utilizar git bisect
+
+COMANDOS PARA UTILIZAR GIT BISECT
+
+`$ git bisect start`
+
+Esto iniciara la depuración, luego se debe identificar un rango, donde evaluaremos los problemas, para ellos debemos introducir.
+
+1. Donde tenemos los problemas de software `$ git bisect bad codigo_commit_actual` puede ser otro commit, solo es donde detectamos el problema.
+2. Donde sabemos que el codigo estaba bien `$ git bisect good codigo_commit_version_anterior` o donde sabemos que el codigo estaba bien.
+
+Esto iniciara una depuración donde nos ira mostrando multiples commits y nosotros debemos determinar uno a uno si es bueno o malo e ir corrigiendo. Esto lo hacemos con `$ git bisect bad` o `$ git bisect good`.
+
+Una vez se termina la depuración se utiliza el comando `$ git bisect reset`
+
+Git bisect es mucho más complejo por ello se recomienda al momento de utilizar leer la documentación oficial.
 
 ---
 
