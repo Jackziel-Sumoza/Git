@@ -6,7 +6,7 @@ class PersonaNatural():
         self.apellido = apellido_usuario
         self.profesion = profesion
         
-    def presentar():
+    def presentar(self):
         return f"¡Hola! mi nombre es {self.nombre} {self.apellido} y soy {self.profesion}"
 
 jackziel_sumoza = PersonaNatural("Jackziel","Sumoza","Programador Web")
@@ -14,4 +14,4 @@ jackziel_sumoza = PersonaNatural("Jackziel","Sumoza","Programador Web")
 # pintamos en consola el metodo presentar
 print(jackziel_sumoza.presentar())
 
-#** retorna !Hola! mi nombre es Jackziel Sumoza y soy Programador WeB
+#** retorna !Hola! mi nombre es Jackziel Sumoza y soy Programador Web
