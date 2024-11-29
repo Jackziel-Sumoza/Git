@@ -1,4 +1,4 @@
-# Todo Sobre Git
+# GIT EN OPEN SOURCE
 
 ![banner de git](./assets/github-header-image.png)
 
